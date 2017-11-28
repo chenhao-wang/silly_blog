@@ -35,14 +35,20 @@
     </article>
     {% endautoescape %}
     {% endfor %}
-    <div class="pagination">
+    <div class="pagination row">
+        <div class="col-md-3">
         {% if newer_page %}
         <a class="next" href="/{{ newer_page }}/">← Newer</a>
         {% endif %}
+        </div>
+        <div class="col-md-6">
         <a href="{% url 'archives' %}">Blog Archives</a>
+        </div>
+        <div class="col-md-3">
         {% if prev_page %}
         <a class="prev" href="/{{ prev_page }}/">Older →</a>
         {% endif %}
+        </div>
     </div>
 </div>
 {% endblock content %}
