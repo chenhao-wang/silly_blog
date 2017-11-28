@@ -1,0 +1,62 @@
+{% extends 'my_blog/blog_base.html' %}
+{% load static %}
+{% load markdownify %}
+{% load mytags %}
+
+
+{% block content %}
+<div class="blog-wrap">
+    <script type="text/javascript">
+    //alert("{{ blogpost.display_html|truncatewords:'50' }}");
+
+    </script>
+    {% for category, posts_by_year in data %}
+    <article class="article_block" role="article">
+        <header class="category">
+            <h1 class="entry-title">
+                {% if category == "article" %}
+                Article
+                {% elif category == "stem" %}
+                STEM
+                {% elif category == "machine learning" %}
+                Machine Learning
+                {% elif category == "deep learning" %}
+                Deep Learning
+                {% elif category == "cpp" %}
+                C++
+                {% elif category == "python" %}
+                Python
+                {% elif category == "java" %}
+                Java
+                {% endif %}
+            </h1>
+        </header>
+        <div id="blog-archives">
+            {% for year, blogposts in posts_by_year %}
+            <h2>{{year}}</h2>
+                {% for blogpost in blogposts %}
+                <article class="archive_list">
+                    <h1>
+                        <a href="{{ blogpost.get_absolute_url }}">{{ blogpost.title }}</a>
+                    </h1>
+                    <footer class="intro">
+                        <time class="timer" datetime="{{ blogpost.pub_date }}">
+                            <span class="month">{{ blogpost.pub_date|date:"M"|upper }}</span>
+                            <span class="day">{{ blogpost.pub_date.day }}</span>
+                        </time>
+                        <span class="tags">
+                          TAG:
+                          {% for tag in blogpost.tags.all %}
+                            {{ tag.name }}
+                            {%if not forloop.last%},{%endif%}
+                          {% endfor %}
+                        </span>
+                    </footer>
+                </article>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </article>
+    {% endfor %}
+</div>
+{% endblock content %}

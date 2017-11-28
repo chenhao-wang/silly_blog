@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+{% load markdownify %}
+{% load mytags %}
+<html lang="en">
+</html><!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>inofance's blog</title>
+    <meta name="keywords" content="website keywords, website keywords"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+
+    <!-- modernizr enables HTML5 elements and feature detects -->
+    <script type="text/javascript" src="{% static 'js/modernizr-1.5.min.js' %}"></script>
+    <!--{% block pagecss %}{% endblock pagecss %}-->
+</head>
+
+<body class="base_body">
+<div class="container wrap">
+    <header class="base_header row">
+        <div id="logo" class="row">
+            <div id="logo_text">
+                <!-- class="logo_colour", allows you to change the colour of the text -->
+                <h1><a href="{% url 'home' %}"><span class="logo_colour">inofance</span></a></h1>
+                <h2>Has nothing to show for it.</h2>
+            </div>
+        </div>
+        <nav id="menu_container" class="row">
+            <ul class="sf-menu" id="nav">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'archives' %}">Archives</a></li>
+                <li><a href="{% url 'notes' %}">Notes</a>
+                    <ul>
+                        <li><a href="{% url 'machine_learning' %}">Machine Learning</a></li>
+                        <li><a href="{% url 'deep_learning' %}">Deep Learning</a></li>
+                        <li><a href="{% url 'cpp' %}">C++</a></li>
+                        <li><a href="{% url 'python' %}">Python</a></li>
+                        <li><a href="{% url 'java' %}">Java</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="site_content" class="row">
+        <div class="row content">
+            {% block content %}
+            <!--content gonna be filled by each page-->
+            {% endblock content %}
+        </div>
+    </div>
+    <div>
+        <div id="scroll">
+            <a title="Scroll to the top" class="top" href="#"><img src="{% static 'images/top.png' %}" alt="top"/></a>
+        </div>
+        <footer class="base_footer">
+            <p><a class="a-f" href="{% url 'home' %}">Home</a> | <a class="a-f" href="{% url 'archives' %}">Archives</a>
+                | <a class="a-f"
+                     href="{% url 'notes' %}">Notes</a>
+                | <a class="a-f" href="{% url 'about' %}">About</a></p>
+            <p class="bot-p"><a class="a-f" href="https://github.com/chenhao-wang/silly_blog">Github source code</a> |
+                <a class="a-f"
+                   href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+        </footer>
+    </div>
+</div>
+
+<!-- javascript at the bottom for fast page loading -->
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/jquery.sooperfish.js' %}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+
+</script>
+</body>
+</html>

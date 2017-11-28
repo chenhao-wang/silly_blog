@@ -1,0 +1,12 @@
+django>=1.8,<1.9
+requests
+django-contact-form
+django-taggit
+unidecode
+Pillow
+uwsgi
+uwsgidecorators
+psycopg2
+markdown2
+mistune
+pygments

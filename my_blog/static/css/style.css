@@ -1,0 +1,462 @@
+@font-face {
+  font-family: Droid Sans; 
+    src: url('../fonts/DroidSans-webfont.eot'); 
+    src: local("Droid Sans"), url('../fonts/DroidSans-webfont.woff'); 
+} 
+
+@font-face { 
+  font-family: News Cycle; 
+    src: url('../fonts/NewsCycle-Regular.eot'); 
+    src: local("News Cycle"), url('../fonts/NewsCycle-Regular.ttf'); 
+} 
+
+html { 
+  height: 100%;
+}
+
+* { 
+  margin: 0;
+  padding: 0;
+}
+
+/* tell the browser to render HTML 5 elements as block */
+article, aside, figure, footer, header, hgroup, nav, section { 
+  display:block;
+}
+
+body.base_body {
+  font: normal .80em 'Droid Sans', arial, sans-serif;
+  background-color:#8abfd463;
+  color: #194f08;
+  height:100%;
+}
+
+p {
+  padding: 0 0 16px 0;
+  line-height: 1.7em;
+  color:#000;
+}
+
+img {
+  border: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  letter-spacing: 0em;
+  padding: 0 0 5px 0;
+}
+
+h1, h2, h3 {
+  font: normal 140% 'News Cycle', arial;
+  margin: 0 0 15px 0;
+  padding: 15px 0 5px 0;
+}
+
+h2 {
+  font-size: 160%;
+  padding: 9px 0 5px 0;
+}
+
+h3 {
+  font-size: 140%;
+  padding: 5px 0 0 0;
+}
+
+h4, h6 {
+  padding: 0 0 5px 0;
+  font: normal 120% 'Droid Sans', arial, sans-serif;
+}
+
+h5, h6 {
+  font: italic 100% 'Droid Sans', arial;
+  padding: 0 0 15px 0;
+}
+
+h6 {
+  font: normal 100% 'Droid Sans', arial;
+}
+
+a, a:hover {
+  outline: none;
+  text-decoration: none;
+  color:#631682;
+}
+
+a:hover {
+  text-decoration: underline;
+  color:#0b62ed;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding: 10px 20px 0 20px;
+  border: 1px solid #E5E5DB;
+  background: #FFF;
+}
+
+ul {
+  margin: 2px 0 22px 17px;
+}
+
+ul li {
+  list-style-type: circle;
+  margin: 0 0 6px 0;
+  padding: 0 0 4px 5px;
+  line-height: 1.5em;
+}
+
+ol {
+  margin: 8px 0 22px 20px;
+}
+
+ol li {
+  margin: 0 0 11px 0;
+}
+
+.left {
+  float: left;
+  width: auto;
+  margin-right: 10px;
+}
+
+.right {
+  float: right;
+  width: auto;
+  margin-left: 10px;
+}
+
+.center {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+}
+
+
+header.base_header {
+  background: #1D1D1D;
+  height: 200px;
+  width:100%;
+  margin:0 auto 0 auto;
+}
+
+#logo{
+  width:100%;
+  #height: 180px;
+  margin:0 auto 0 auto;
+  background: transparent;
+  color: #888;
+  padding: 20px 0 0 0;
+}
+
+#logo #logo_text {
+  width: 100%;
+  margin:0 auto 0 auto;
+  text-align:center;
+  padding: 0 20px 20px 20px;
+}
+
+#logo h1, #logo h2 {
+  font: normal 400% 'News Cycle', arial, sans-serif;
+  border-bottom: 0;
+  text-transform: none;
+  margin: 0;
+}
+
+#logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
+  padding: 0;
+  color: #FFF;
+  text-decoration: none;
+}
+
+#logo_text h1 a .logo_colour {
+  color: #ff0000;
+  text-shadow: 1px 1px #294701;
+}
+
+#logo_text a:hover .logo_colour {
+  color: #FFF;
+}
+
+#logo_text h2 {
+  font-size: 140%;
+  padding: 0 0 0 0;
+  color: #FFF;
+}
+
+nav {
+  /*height: 44px;*/
+  margin: auto auto 0 auto;
+  color: #fef4e9;
+  background: #000;
+}
+
+#menu_container {
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+
+#site_content {
+  width: 100%;
+  overflow: hidden;
+  min-height:100%;
+  padding: 15px 0px 125px 0px;
+  margin:0 auto 0 auto;
+  background:#ffffff;
+}
+
+.content {
+  text-align: left;
+  width: 100%;
+  font-size: 100%;
+  overflow:hidden;
+  padding: 16px 32px 125px 32px;
+}
+
+footer.base_footer {
+  font: 100% 'Droid Sans', arial, sans-serif;
+  height: 125px;
+  width:100%;
+  padding: 28px 0 5px 0;
+  text-align: center;
+  background: #1D1D1D;
+  color: #FFF;
+  margin:bottom:-30px;
+  border-top: 6px solid #F5388C;
+  color:white;
+}
+
+/* scroll to top */
+#scroll {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  bottom: 15px;
+  right: 0;
+  background: red;
+  padding: 0;
+}
+
+#scroll a {
+  float: right;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#scroll a img {
+  float: right;
+  padding: 0 0 0 0;
+  margin: 0;
+}
+
+
+
+
+
+/**
+Stylesheet for SooperFish by www.SooperThemes.com
+Author: Jurriaan Roelofs
+**/
+
+/* Configuration of menu width */
+html body ul.sf-menu ul,html body ul.sf-menu ul li {
+  width: 220px;
+}
+
+html body ul.sf-menu ul ul {
+  margin: 0 0 0 220px;
+}
+
+/* Framework for proper showing/hiding/positioning */
+ul.sf-menu,ul.sf-menu * {
+  margin: 0;
+  padding: 0;
+}
+
+ul.sf-menu {
+  display: block;
+  position: relative;
+}
+
+ul.sf-menu li {
+  display: block;
+  list-style: none;
+  float: left;
+  position: relative;
+}
+
+ul.sf-menu li:hover {
+  visibility: inherit; /* fixes IE7 'sticky bug' */
+}
+
+ul.sf-menu a {
+  display: block;
+  position: relative;
+}
+
+ul.sf-menu ul {
+  position: absolute;
+  left: 0;
+  width: 150px;
+  top: auto;
+  left: -999999px;
+}
+
+ul.sf-menu ul a {
+  zoom: 1; /* IE6/7 fix */
+}
+
+ul.sf-menu ul li {
+  float: left; /* Must always be floated otherwise there will be a rogue 1px margin-bottom in IE6/7 */
+  width: 150px;
+}
+
+ul.sf-menu ul ul {
+  top: 0;
+  margin: 0 0 0 150px;
+}
+
+ul.sf-menu li:hover ul,ul.sf-menu li:focus ul,ul.sf-menu li.sf-hover ul,
+ul.sf-menu ul li:hover ul,ul.sf-menu ul li:focus ul,ul.sf-menu ul li.sf-hover ul,
+ul.sf-menu ul ul li:hover ul,ul.sf-menu ul ul li:focus ul,ul.sf-menu ul ul li.sf-hover ul,
+ul.sf-menu ul ul ul li:hover ul,ul.sf-menu ul ul ul li:focus ul,ul.sf-menu ul ul ul li.sf-hover ul {
+  left: auto;
+}
+
+ul.sf-menu li:hover ul ul,ul.sf-menu li:focus ul ul,ul.sf-menu li.sf-hover ul ul,
+ul.sf-menu ul li:hover ul ul,ul.sf-menu ul li:focus ul ul,ul.sf-menu ul li.sf-hover ul ul,
+ul.sf-menu ul ul li:hover ul ul,ul.sf-menu ul ul li:focus ul ul,ul.sf-menu ul ul li.sf-hover ul ul,
+ul.sf-menu ul ul ul li:hover ul ul,ul.sf-menu ul ul ul li:focus ul ul,ul.sf-menu ul ul ul li.sf-hover ul ul {
+  left: -999999px;
+}
+
+/* autoArrows CSS */
+span.sf-arrow {
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  display: block;
+  background: url(../images/arrows-white.png) no-repeat 0 0;
+  overflow: hidden; /* making sure IE6 doesn't overflow and expand the box */
+  font-size: 1px;
+}
+
+ul ul span.sf-arrow {
+  right: 10;
+  top: 20px;
+  background-position: 0 100%;
+}
+
+/* Theming the menu */
+ul#nav {
+  margin: 0 auto 0 auto;
+}
+
+ul#nav ul {
+  background: #000;
+  margin-top: 5px;
+  padding-bottom: 15px;
+}
+
+ul#nav li a {
+  padding:5px 20px 6px 20px;
+  font: 150% 'News Cycle', arial, sans-serif;
+  text-shadow: 1px 1px #294701;
+  text-decoration: none;
+  color:#FFF;
+  margin-right: 2px;
+}
+
+ul#nav li a:hover,ul#nav li a:focus {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.pagination {
+  padding:20px 0 0 0;
+  text-align:center;
+
+}
+
+.pagination .next {
+    float:left;
+}
+
+.pagination .prev {
+    float:right;
+}
+
+header.content_title {
+    height:100px;
+    background:transparent;
+    padding-bottom:20px;
+}
+
+.content_content {
+    padding-top:8px;
+    padding-bottom:20px;
+}
+
+article.home_article {
+    padding-top:15px;
+    padding-bottom:30px;
+    border-bottom:dotted;
+    border-width:1px;
+}
+
+article.article_block {
+    padding: 20px 0 20px 0;
+}
+
+article.archive_list {
+    padding: 10px 0 10px 0;
+    border-bottom:dotted;
+    border-width:1px;
+}
+
+.category {
+    height:80px;
+    background:transparent;
+}
+
+h1.entry-title {
+    padding: 20px 0 20px 0;
+    font: italic bold 50px Georgia, serif;
+}
+
+
+footer.intro {
+    padding: 20px 0 20px 0;
+}
+time.timer {
+    font: italic bold 16px Georgia, serif;
+    float:left;
+}
+
+footer span.tags {
+    font: italic bold 16px Georgia, serif;
+    float:right;
+}
+
+.container {
+    min-height:100%;
+}
+
+.bot-p {
+    margin-bottom:0;
+}
+
+.wrap {
+    height:100%;
+}
+
+.a-f {
+    color:white;
+}
+
+.blog-wrap {
+    width:100%;
+    padding-left:20px;
+}

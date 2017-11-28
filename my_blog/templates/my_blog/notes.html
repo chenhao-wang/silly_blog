@@ -1,0 +1,14 @@
+{% extends 'my_blog/blog_base.html' %}
+{% load static %}
+{% load markdownify %}
+{% load mytags %}
+
+
+{% block content %}
+{% autoescape off %}
+<article>
+    {{ notes.display_html }}
+</article>
+{% endautoescape %}
+
+{% endblock content %}
