@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 import os
 from _datetime import datetime
 from django.db import models
@@ -9,16 +10,14 @@ from django.core.urlresolvers import reverse
 # delete md_file before delete/change model
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
-from django.core.files.base import ContentFile
 
-import markdown2
 from unidecode import unidecode
 from taggit.managers import TaggableManager
 
-
 # Create your models here.
 
-upload_dir = 'content/BlogPost/%s/%s'
+# upload_dir = 'content/BlogPost/%s/%s'
+upload_dir = 'upload/%s/%s'
 
 
 class BlogPost(models.Model):
@@ -59,7 +58,6 @@ class BlogPost(models.Model):
     pub_date = models.DateTimeField('date published', auto_now_add=True)
     last_edit_date = models.DateTimeField('last edited', auto_now=True)
     slug = models.SlugField(max_length=200, blank=True)
-    html_file = models.FileField(upload_to=get_html_name, blank=True)
     category = models.CharField(max_length=30, choices=CATEGORY_CHOICE)
     description = models.TextField(blank=True)
     tags = TaggableManager()
@@ -79,17 +77,7 @@ class BlogPost(models.Model):
         if not self.body and self.md_file:
             self.body = self.md_file.read()
 
-        html = markdown2.markdown(self.body,
-                                  extras=["fenced-code-blocks", "tables"])
-        self.html_file.save(self.title + '.html',
-                            ContentFile(html.encode('utf-8')), save=False)
-        self.html_file.close()
-
         super().save(*args, **kwargs)
-
-    def display_html(self):
-        with open(self.html_file.path, encoding='utf-8') as f:
-            return f.read()
 
     def get_absolute_url(self):
         return reverse('my_blog.views.blogpost',
@@ -100,8 +88,6 @@ class BlogPost(models.Model):
 def blogpost_delete(instance, **kwargs):
     if instance.md_file:
         instance.md_file.delete(save=False)
-    if instance.html_file:
-        instance.html_file.delete(save=False)
 
 
 class BlogPostImage(models.Model):

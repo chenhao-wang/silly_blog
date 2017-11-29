@@ -7,7 +7,7 @@
 {% block content %}
 {% autoescape off %}
 <article>
-    {{ about.display_html }}
+    {{ about.body | markdown | safe }}
 </article>
 {% endautoescape %}
 
