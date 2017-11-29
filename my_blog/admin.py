@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from django.contrib import admin
 from .models import BlogPost, BlogPostImage
 
@@ -9,6 +10,8 @@ from django.core.files.base import ContentFile
 import os
 from django.conf import settings
 import platform
+from django.template.defaultfilters import slugify
+from unidecode import unidecode
 
 
 class BlogPostImageInline(admin.TabularInline):
@@ -48,6 +51,7 @@ class BlogPostAdmin(admin.ModelAdmin):
                     os.remove(os.path.join(root, file))
 
     def save_model(self, request, obj, form, change):
+        
         if obj:
             if obj.body:   # body有内容的时候才会更新md_file
                 filename = obj.filename
@@ -59,7 +63,7 @@ class BlogPostAdmin(admin.ModelAdmin):
                         obj.md_file.delete(save=False)   # 部署的时候存在,可以正常删除文件
                         # obj.html_file.delete(save=False)
                 # 没有md_file就根据title创建一个, 但不能创建html因为obj.save()的时候会创建
-                obj.md_file.save(filename+'.md', ContentFile(obj.body), save=False)
+                obj.md_file.save(filename + '.md', ContentFile(obj.body.encode('utf-8')), save=False)
                 obj.md_file.close()
         obj.save()
 

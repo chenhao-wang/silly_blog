@@ -1,3 +1,4 @@
+# -- coding: utf-8
 from __future__ import unicode_literals
 import os
 from _datetime import datetime
@@ -13,6 +14,7 @@ from django.dispatch import receiver
 
 from unidecode import unidecode
 from taggit.managers import TaggableManager
+
 
 # Create your models here.
 
@@ -76,7 +78,8 @@ class BlogPost(models.Model):
         self.slug = slugify(unidecode(self.title))
         if not self.body and self.md_file:
             self.body = self.md_file.read()
-
+        self.body = self.body.encode('utf-8')
+        
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):

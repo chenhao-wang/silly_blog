@@ -25,6 +25,7 @@ def home(request, page=''):
 
 
 def blogpost(request, slug, post_id):
+    request.encoding = 'utf-8'
     args = {'blogpost': get_object_or_404(BlogPost, pk=post_id)}
     return render(request, 'my_blog/blogpost.html', args)
 

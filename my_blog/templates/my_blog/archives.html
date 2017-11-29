@@ -36,9 +36,9 @@
             <h2>{{year}}</h2>
                 {% for blogpost in blogposts %}
                 <article class="archive_list">
-                    <h1>
+                    <h2>
                         <a href="{{ blogpost.get_absolute_url }}">{{ blogpost.title }}</a>
-                    </h1>
+                    </h2>
                     <footer class="intro">
                         <time class="timer" datetime="{{ blogpost.pub_date }}">
                             <span class="month">{{ blogpost.pub_date|date:"M"|upper }}</span>
